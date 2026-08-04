@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loboc National High School</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    height:100%;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+}
+
+/*================ HEADER ================*/
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    background:linear-gradient(135deg, orangered 0%, #8b0000 50%, #b30000 100%);
+}
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    width:100px;
+    height:100px;
+    object-fit:contain;
+}
+
+.school h1{
+    color:#ffd700;
+    font-size:40px;
+    line-height:1;
+    font-weight:bold;
+}
+
+.school h2{
+    font-size:18px;
+    color:#ffffff;
+    margin-top:5px;
+}
+
+.school h3{
+    font-size:18px;
+    color:#f0f0f0;
+}
+
+.school p{
+    color:#e0e0e0;
+    font-size:14px;
+}
+
+/*================ NAVIGATION & DROPDOWN ================*/
+
+nav{
+    background:#5c0000;
+    position:relative;
+    z-index:100;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav li{
+    margin:0;
+    position:relative;
+}
+
+nav li a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:8px 20px;
+    font-size:18px;
+    transition:0.3s;
+}
+
+/* Dropdown Menu styling */
+.dropdown-menu {
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#5c0000;
+    min-width:180px;
+    box-shadow:0px 8px 16px rgba(0,0,0,0.3);
+    list-style:none;
+    flex-direction:column;
+}
+
+.dropdown-menu li {
+    width:100%;
+}
+
+.dropdown-menu li a {
+    font-size:16px;
+    padding:10px 15px;
+    border-bottom:1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Show dropdown when toggled active via JS or hover */
+.dropdown.active .dropdown-menu,
+.dropdown:hover .dropdown-menu {
+    display:flex;
+}
+
+/* Hover effect */
+nav li a:hover{
+    background:gold;
+    color:black;
+}
+
+/* Active tab */
+nav li a.active{
+    background:yellow;
+    color:black;
+    font-weight:bold;
+}
+
+/*================ CONTENT ================*/
+
+iframe{
+    flex:1;
+    width:100%;
+    border:none;
+}
+
+/*================ IMAGE CAROUSEL ================*/
+
+.carousel{
+    position:relative;
+    width:750px;
+    max-width:100%;
+    height:110px;
+    overflow:hidden;
+    border-radius:4px;
+}
+
+.carousel img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    animation:fade 15s infinite;
+}
+
+.carousel img:nth-child(1){animation-delay:0s;}
+.carousel img:nth-child(2){animation-delay:3s;}
+.carousel img:nth-child(3){animation-delay:6s;}
+.carousel img:nth-child(4){animation-delay:9s;}
+.carousel img:nth-child(5){animation-delay:12s;}
+
+@keyframes fade{
+    0%{opacity:0;}
+    3%{opacity:1;}
+    20%{opacity:1;}
+    23%{opacity:0;}
+    100%{opacity:0;}
+}
+
+/*================ RESPONSIVE ================*/
+
+@media(max-width:900px){
+
+.header{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+}
+
+.left{
+    flex-direction:column;
+}
+
+.carousel{
+    width:100%;
+}
+
+nav ul{
+    flex-wrap:wrap;
+}
+
+.dropdown-menu {
+    position:static;
+    width:100%;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="left">
+        <img src="lnhs.png" class="logo" alt="Logo">
+
+        <div class="school">
+            <h1>LOBOC NHS</h1>
+            <h2>Bahi-an, Loboc, Bohol</h2>
+            <h3>302869</h3>
+            <p>0928-961-1858</p>
+            <p>302869@deped.gov.ph</p>
+        </div>
+    </div>
+
+    <div class="carousel">
+        <img src="header/image1.png" alt="Banner 1">
+        <img src="header/image2.png" alt="Banner 2">
+        <img src="header/image3.png" alt="Banner 3">
+        <img src="header/image4.png" alt="Banner 4">
+        <img src="header/image5.png" alt="Banner 5">
+    </div>
+
+</header>
+
+<nav>
+<ul>
+    <li><a href="home.html" target="content" class="active">Home</a></li>
+    <li style="background:darkred;"><a href="https://tinyurl.com/y2sfebk9" target="_blank">School Calendar</a></li>
+    <li class="dropdown"><a href="https://jimmy1991-netizen.github.io/QRA/" target="content">QRA</a></li>
+    
+    <!-- Dropdown Item -->
+    <li class="dropdown" style="background:darkred;">
+        <a href="#" id="mediaBtn">Media &#9660;</a>
+        <ul class="dropdown-menu">
+            <li><a href="https://www.facebook.com/share/1BmDatXVid/" target="_blank">LNHS FB Page</a></li>
+            <li><a href="https://www.facebook.com/share/1AZ7QrDnTw/" target="_blank">SSLG FB Page</a></li>
+            <li><a href="https://www.facebook.com/share/14mprmtNPHT/" target="_blank">Newsette FB Page</a></li>
+        </ul>
+    </li>
+
+    <li><a href="https://www.depedbohol.org/?page_id=34513" target="content">Division Memo</a></li>
+    <li style="background:darkred;"><a href="https://deped.gov.ph/deped-memorandum/" target="content">Deped Memo</a></li>
+</ul>
+</nav>
+
+<iframe src="home.html" name="content"></iframe>
+
+<script>
+// Highlight the selected navigation tab and manage dropdown click behavior
+const navLinks = document.querySelectorAll("nav a");
+const mediaBtn = document.getElementById("mediaBtn");
+const dropdown = document.querySelector(".dropdown");
+
+// Toggle dropdown when Media button is clicked
+mediaBtn.addEventListener("click", function(e) {
+    e.preventDefault(); // Prevents page reload
+    dropdown.classList.toggle("active");
+});
+
+// Manage active menu highlight
+navLinks.forEach(link => {
+    link.addEventListener("click", function(e){
+        // Ignore main media toggle button click from clearing selection
+        if (this === mediaBtn) return;
+
+        // Remove active class from all tabs
+        navLinks.forEach(item => item.classList.remove("active"));
+
+        // Highlight clicked item
+        this.classList.add("active");
+
+        // Close dropdown when a sub-item is clicked
+        dropdown.classList.remove("active");
+    });
+});
+
+// Close dropdown if clicked outside navigation
+document.addEventListener("click", function(e) {
+    if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("active");
+    }
+});
+</script>
+
+</body>
+</html>
